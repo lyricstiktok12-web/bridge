@@ -1,14 +1,7 @@
-// src/discord/commands/blacklist.ts
-import { SlashCommandBuilder } from 'discord.js';
+// src/blacklist/is-user-blacklisted.ts
 
-export const data = new SlashCommandBuilder()
-  .setName('blacklist')
-  .setDescription('Blacklist feature is currently disabled.');
-
-// Disable all blacklist functionality
-export async function execute(interaction: any) {
-  await interaction.reply({
-    content: '⚠️ Blacklist feature is currently disabled.',
-    ephemeral: true
-  });
+// Blacklist feature is disabled
+export default function isUserBlacklisted(_username: string): boolean {
+  return false;
 }
+
