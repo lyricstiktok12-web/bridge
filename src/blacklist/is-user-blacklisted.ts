@@ -1,6 +1,6 @@
-import _blacklist from './_blacklist.json';
+// src/blacklist/is-user-blacklisted.ts
 
-export default (uuid: string) => {
-    const blacklist = _blacklist as BlacklistEntry[];
-    return blacklist.some((entry) => entry.uuid === uuid);
-};
+export default function isUserBlacklisted(_username: string): boolean {
+  // Blacklist feature is disabled
+  return false;
+}
