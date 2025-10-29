@@ -14,16 +14,9 @@ export default {
             `${emoji} **${escapeMarkdown(playerName)}** ${status}. \`(${bridge.onlineCount}/${bridge.totalCount})\``
         );
 
-        // --- Send welcome message in Minecraft guild chat if joined ---
+        // Send Minecraft guild chat welcome
         if (status === 'joined') {
-            // Replace this with your guild chat method
-            // If using MiscGuild:
-            if (bridge.bot && bridge.bot.guild && bridge.bot.guild.sendMessage) {
-                bridge.bot.guild.sendMessage(`Welcome ${playerName} to the guild! 🎉`);
-            } else {
-                // Fallback using guild chat command
-                bridge.bot.chat(`/guild Welcome ${playerName} to the guild! 🎉`);
-            }
+            bridge.bot.chat(`/gc Welcome ${playerName} to the guild! 🎉`);
         }
     },
 } as BotEvent;
